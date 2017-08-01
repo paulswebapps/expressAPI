@@ -1,5 +1,6 @@
 
 [![dependencies](https://david-dm.org/paulswebapps/expressAPI.svg)](https://david-dm.org/paulswebapps/expressAPI)
+[![Build Status](https://travis-ci.org/paulswebapps/expressAPI.svg?branch=master)](https://travis-ci.org/paulswebapps/expressAPI)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 # Simple Web Service
