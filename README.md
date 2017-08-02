@@ -46,7 +46,7 @@ To confirm that the server is up and responding to request, ping `http://localho
 
 ### Clustering
 
-To avoid writing application code to utilize nodejs's [cluster module](https://nodejs.org/api/cluster.html), we use PM2 to setup clustering through the start-up script. When `yarn` or `npm install` is ran, pm2 will be installed on your machine globally, using the `preinstall` hook in `package.json`.
+Node, by default, runs on a single core. To spawn multiple processes, load-balanced across cores, we use the [cluster module](https://nodejs.org/api/cluster.html), called in by [PM2](http://pm2.keymetrics.io/). When `yarn` or `npm install` is ran, pm2 will be installed on the machine, using the `preinstall` hook in [package.json](package.json).
 
 Start the server cluster, one process per core, load balanced.
 ```bash
