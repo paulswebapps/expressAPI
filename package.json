@@ -1,35 +1,36 @@
 {
-	"name": "subscription",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"preinstall": "npm install pm2 -g",
-		"start": "pm2 start server.js -i max --watch",
-		"stop": "pm2 stop server",
-		"test": "node tests/*.js | faucet",
-		"precommit": "lint-staged"
-	},
-	"lint-staged": {
-		"*.js": [
-			"eslint --color",
-			"git add"
-		]
-	},
-	"dependencies": {
-		"body-parser": "~1.17.1",
-		"debug": "~2.6.3",
-		"express": "~4.15.2",
-		"morgan": "~1.8.1"
-	},
-	"devDependencies": {
-		"eslint": "^4.3.0",
-		"eslint-config-airbnb-base": "^11.3.1",
-		"eslint-plugin-import": "^2.7.0",
-		"eslint-plugin-tape": "^1.1.0",
-		"faucet": "^0.0.1",
-		"husky": "^0.14.3",
-		"lint-staged": "^4.0.2",
-		"sinon": "^2.4.1",
-		"tape": "^4.7.0"
-	}
+  "name": "expressAPI",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "pm2 start server.js -i max --watch",
+    "stop": "pm2 stop server",
+    "test": "node tests/*.js | faucet",
+    "precommit": "lint-staged",
+    "monitor": "pm2 monit"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --color",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "pm2": "^2.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-tape": "^1.1.0",
+    "faucet": "^0.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
+    "sinon": "^2.4.1",
+    "tape": "^4.7.0"
+  }
 }

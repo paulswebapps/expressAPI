@@ -14,31 +14,40 @@ Clone this repo.
 ```bash
 git clone https://github.com/paulswebapps/expressAPI
 ```
+
+Install yarn
+
+```bash
+brew install yarn
+```
+
 Install using npm or yarn.
 
 ```bash
-npm install
+yarn
 ```
+
 Run all tests
+
 ```bash
-npm test
+yarn test
 ```
 
 ### Debugging
 
-When debugging, run `server.js` directly. For [VS Code](https://code.visualstudio.com/), the debugger's confuration file could look like this:
+When debugging, run `server.js` directly. For [VS Code](https://code.visualstudio.com/), the debugger's configuration file could look like this:
 
-```
+```json
 {
-	"version": "0.2.0",
-	"configurations": [
-		{
-			"type": "node",
-			"request": "launch",
-			"name": "Launch Program",
-			"program": "${workspaceRoot}/server.js"
-		}
-	]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceRoot}/server.js"
+    }
+  ]
 }
 ```
 
@@ -46,24 +55,28 @@ To confirm that the server is up and responding to request, ping `http://localho
 
 ### Clustering
 
-Node, by default, runs on a single core. To spawn multiple processes, load-balanced across cores, we use the [cluster module](https://nodejs.org/api/cluster.html), called in by [PM2](http://pm2.keymetrics.io/). When `yarn` or `npm install` is ran, pm2 will be installed on the machine, using the `preinstall` hook in [package.json](package.json).
+Node, by default, runs on a single core. To spawn multiple processes, load-balanced across cores, we use the [cluster module](https://nodejs.org/api/cluster.html), called in by [PM2](http://pm2.keymetrics.io/).
 
 Start the server cluster, one process per core, load balanced.
+
 ```bash
-npm start
+yarn start
 ```
+
 You should see PM2's report of `online` node load-balanced processes.
 
 For benchmarking, it can be useful to monitor your node processes.
 
 ```bash
-pm2 monit
+yarn run monitor
 ```
 
 When you're done using your cluster, stop all processes.
+
 ```bash
-npm stop
+yarn stop
 ```
+
 ## License
 
   [MIT](LICENSE)
